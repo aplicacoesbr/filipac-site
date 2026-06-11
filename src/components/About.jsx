@@ -11,7 +11,6 @@ const miniStats = [
   { num: '+50', lbl: 'Máquinas entregues' },
   { num: 'Global', lbl: 'Presença internacional' },
   { num: '100%', lbl: 'Suporte técnico' },
-  { num: 'ISO', lbl: 'Qualidade certificada' },
 ]
 
 export default function About() {
