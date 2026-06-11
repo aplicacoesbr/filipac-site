@@ -26,8 +26,7 @@ export default function About() {
             <h2 className="section-title">Sobre a Filipac</h2>
             <p>
               A Filipac é especialista no desenvolvimento e fabricação de máquinas de embalagem
-              para a indústria de explosivos. Com décadas de experiência, entregamos equipamentos
-              que unem performance, segurança e confiabilidade.
+              para a indústria de explosivos.
             </p>
             <p>
               Nossa tecnologia ExPlus é referência no mercado, com clientes em diversas partes do
