@@ -331,8 +331,8 @@ body {
   animation: fadeSlideRight 0.9s cubic-bezier(0.16,1,0.3,1) 0.5s both;
 }
 .hero-image-wrap img {
-  width: 90%;
-  max-height: 520px;
+  width: 110%;
+  max-height: 680px;
   object-fit: contain;
   filter: drop-shadow(0 24px 60px rgba(0,0,0,0.55));
   animation: float 5s ease-in-out 1.5s infinite;
