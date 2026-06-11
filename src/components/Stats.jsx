@@ -37,7 +37,7 @@ export default function Stats() {
       <div className="stats-grid">
         <StatItem prefix="+" target={20} label="Anos de experiência" delay={1} />
         <StatItem prefix="+" target={50} label="Máquinas entregues" delay={2} />
-        <StatItem target={750} suffix="+" label="Embalagens/hora" delay={3} />
+        <StatItem target={120} label="Cartuchos/minuto" delay={3} />
         <StatText value="Global" label="Clientes internacionais" delay={4} />
       </div>
     </div>

@@ -1,7 +1,7 @@
 import { useScrollReveal } from '../hooks/useScrollReveal'
 
 const features = [
-  { icon: '⚡', title: 'Alta Produtividade', desc: 'Até 750+ embalagens por hora em operação contínua' },
+  { icon: '⚡', title: 'Alta Produtividade', desc: 'Até 120 cartuchos por minuto em operação contínua' },
   { icon: '🛡️', title: 'Segurança', desc: 'Projetado com rigorosos padrões de segurança para explosivos' },
   { icon: '🎛️', title: 'HMI Intuitivo', desc: 'Interface touchscreen com controle completo de parâmetros' },
   { icon: '🔧', title: 'Fácil Manutenção', desc: 'Acesso facilitado a componentes e documentação técnica completa' },
