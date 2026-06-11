@@ -1,0 +1,970 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Filipac | Máquinas de Embalagem Industrial</title>
+  <meta name="description" content="Filipac - Tecnologia de embalagem para indústrias de explosivos e produtos viscosos. ExPlus 2000 - Chub Packaging Technology." />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --blue: #003b82;
+      --blue-light: #0057c2;
+      --blue-dark: #001f4d;
+      --accent: #e8a000;
+      --gray: #f5f6f8;
+      --text: #1a1a2e;
+      --text-light: #5a6070;
+      --white: #ffffff;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      color: var(--text);
+      background: var(--white);
+      overflow-x: hidden;
+    }
+
+    /* NAV */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 5%;
+      height: 70px;
+      background: rgba(0, 31, 77, 0.95);
+      backdrop-filter: blur(8px);
+    }
+
+    .nav-logo {
+      font-size: 1.6rem;
+      font-weight: 800;
+      color: var(--white);
+      letter-spacing: 2px;
+      text-decoration: none;
+    }
+
+    .nav-logo span { color: var(--accent); }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: rgba(255,255,255,0.8);
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--accent); }
+
+    .nav-cta {
+      background: var(--accent);
+      color: var(--blue-dark) !important;
+      padding: 0.5rem 1.2rem;
+      border-radius: 4px;
+      font-weight: 700 !important;
+    }
+
+    /* HERO */
+    .hero {
+      min-height: 100vh;
+      background: linear-gradient(135deg, var(--blue-dark) 0%, var(--blue) 60%, #0a4a9e 100%);
+      display: flex;
+      align-items: center;
+      padding: 100px 5% 60px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -10%;
+      width: 70%;
+      height: 200%;
+      background: radial-gradient(ellipse, rgba(232,160,0,0.08) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+      width: 100%;
+    }
+
+    .hero-text { z-index: 1; }
+
+    .hero-badge {
+      display: inline-block;
+      background: rgba(232,160,0,0.15);
+      border: 1px solid rgba(232,160,0,0.4);
+      color: var(--accent);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 0.4rem 1rem;
+      border-radius: 2px;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero h1 {
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      font-weight: 800;
+      color: var(--white);
+      line-height: 1.15;
+      margin-bottom: 1.2rem;
+    }
+
+    .hero h1 span { color: var(--accent); }
+
+    .hero p {
+      font-size: 1.05rem;
+      color: rgba(255,255,255,0.75);
+      line-height: 1.7;
+      margin-bottom: 2.5rem;
+      max-width: 480px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: var(--blue-dark);
+      padding: 0.85rem 2rem;
+      border-radius: 4px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      text-decoration: none;
+      transition: transform 0.2s, box-shadow 0.2s;
+      display: inline-block;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(232,160,0,0.35);
+    }
+
+    .btn-secondary {
+      border: 2px solid rgba(255,255,255,0.4);
+      color: var(--white);
+      padding: 0.85rem 2rem;
+      border-radius: 4px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      text-decoration: none;
+      transition: border-color 0.2s, background 0.2s;
+      display: inline-block;
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--white);
+      background: rgba(255,255,255,0.08);
+    }
+
+    .hero-image {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+    }
+
+    .hero-image img {
+      width: 90%;
+      max-height: 520px;
+      object-fit: contain;
+      filter: drop-shadow(0 20px 60px rgba(0,0,0,0.5));
+    }
+
+    .hero-image-placeholder {
+      width: 100%;
+      height: 420px;
+      background: rgba(255,255,255,0.05);
+      border: 2px dashed rgba(255,255,255,0.2);
+      border-radius: 12px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: rgba(255,255,255,0.4);
+      font-size: 0.9rem;
+      text-align: center;
+      gap: 0.5rem;
+    }
+
+    .machine-name {
+      margin-top: 1rem;
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 8px;
+      padding: 1rem 1.5rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .machine-name .model {
+      font-size: 1.3rem;
+      font-weight: 800;
+      color: var(--white);
+      letter-spacing: 1px;
+    }
+
+    .machine-name .tag {
+      font-size: 0.72rem;
+      color: var(--accent);
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    /* STATS */
+    .stats {
+      background: var(--blue-dark);
+      padding: 3rem 5%;
+      display: flex;
+      justify-content: center;
+    }
+
+    .stats-grid {
+      max-width: 1200px;
+      width: 100%;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2rem;
+      text-align: center;
+    }
+
+    .stat-item .number {
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: var(--accent);
+    }
+
+    .stat-item .label {
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.6);
+      margin-top: 0.3rem;
+    }
+
+    /* SECTIONS */
+    section {
+      padding: 6rem 5%;
+    }
+
+    .section-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .section-label {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--blue-light);
+      margin-bottom: 0.8rem;
+    }
+
+    .section-title {
+      font-size: clamp(1.6rem, 3vw, 2.4rem);
+      font-weight: 800;
+      color: var(--text);
+      line-height: 1.2;
+      margin-bottom: 1rem;
+    }
+
+    .section-desc {
+      font-size: 1rem;
+      color: var(--text-light);
+      line-height: 1.7;
+      max-width: 560px;
+    }
+
+    /* PRODUCT */
+    .product {
+      background: var(--gray);
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: center;
+    }
+
+    .product-features {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      margin-top: 2.5rem;
+    }
+
+    .feature-card {
+      background: var(--white);
+      border-radius: 8px;
+      padding: 1.4rem;
+      border-left: 3px solid var(--blue-light);
+      box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+    }
+
+    .feature-card .icon {
+      font-size: 1.5rem;
+      margin-bottom: 0.6rem;
+    }
+
+    .feature-card h4 {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 0.3rem;
+    }
+
+    .feature-card p {
+      font-size: 0.82rem;
+      color: var(--text-light);
+      line-height: 1.5;
+    }
+
+    .product-specs {
+      background: var(--white);
+      border-radius: 12px;
+      padding: 2.5rem;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+    }
+
+    .product-specs h3 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--blue-dark);
+      margin-bottom: 1.5rem;
+      padding-bottom: 1rem;
+      border-bottom: 2px solid var(--gray);
+    }
+
+    .spec-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.8rem 0;
+      border-bottom: 1px solid var(--gray);
+      font-size: 0.9rem;
+    }
+
+    .spec-row:last-child { border-bottom: none; }
+    .spec-row .spec-key { color: var(--text-light); font-weight: 500; }
+    .spec-row .spec-val { color: var(--text); font-weight: 700; }
+
+    /* APPLICATIONS */
+    .applications { background: var(--white); }
+
+    .app-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-top: 3rem;
+    }
+
+    .app-card {
+      background: var(--gray);
+      border-radius: 10px;
+      padding: 2rem 1.5rem;
+      text-align: center;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .app-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 32px rgba(0,59,130,0.12);
+    }
+
+    .app-card .app-icon {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .app-card h3 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 0.5rem;
+    }
+
+    .app-card p {
+      font-size: 0.85rem;
+      color: var(--text-light);
+      line-height: 1.5;
+    }
+
+    /* ABOUT */
+    .about { background: var(--blue-dark); }
+
+    .about .section-title { color: var(--white); }
+    .about .section-label { color: var(--accent); }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: center;
+    }
+
+    .about p {
+      color: rgba(255,255,255,0.75);
+      line-height: 1.8;
+      margin-bottom: 1.2rem;
+      font-size: 0.95rem;
+    }
+
+    .about-points {
+      margin-top: 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .about-point {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      color: rgba(255,255,255,0.8);
+      font-size: 0.9rem;
+    }
+
+    .about-point::before {
+      content: '✓';
+      background: var(--accent);
+      color: var(--blue-dark);
+      font-weight: 900;
+      font-size: 0.7rem;
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    .about-image-area {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 12px;
+      padding: 3rem 2rem;
+      text-align: center;
+    }
+
+    .about-image-area .big-number {
+      font-size: 5rem;
+      font-weight: 900;
+      color: var(--accent);
+      line-height: 1;
+    }
+
+    .about-image-area .big-label {
+      font-size: 1rem;
+      color: rgba(255,255,255,0.6);
+      margin-top: 0.5rem;
+    }
+
+    .about-stats-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .about-stat {
+      background: rgba(255,255,255,0.06);
+      border-radius: 8px;
+      padding: 1.5rem;
+      text-align: center;
+    }
+
+    .about-stat .num {
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--accent);
+    }
+
+    .about-stat .lbl {
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.5);
+      margin-top: 0.3rem;
+    }
+
+    /* CONTACT FORM */
+    .contact { background: var(--gray); }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.6fr;
+      gap: 5rem;
+      align-items: start;
+    }
+
+    .contact-info h3 {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 1rem;
+    }
+
+    .contact-info p {
+      color: var(--text-light);
+      font-size: 0.95rem;
+      line-height: 1.7;
+      margin-bottom: 2rem;
+    }
+
+    .contact-detail {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      margin-bottom: 1rem;
+      font-size: 0.9rem;
+      color: var(--text);
+    }
+
+    .contact-detail .icon {
+      width: 36px;
+      height: 36px;
+      background: var(--blue-light);
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--white);
+      font-size: 1rem;
+      flex-shrink: 0;
+    }
+
+    form {
+      background: var(--white);
+      border-radius: 12px;
+      padding: 2.5rem;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.07);
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.2rem;
+    }
+
+    .form-group {
+      margin-bottom: 1.2rem;
+    }
+
+    label {
+      display: block;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 0.4rem;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      border: 1.5px solid #dde1e9;
+      border-radius: 6px;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.9rem;
+      color: var(--text);
+      background: var(--white);
+      transition: border-color 0.2s;
+      outline: none;
+    }
+
+    input:focus, select:focus, textarea:focus {
+      border-color: var(--blue-light);
+    }
+
+    textarea { resize: vertical; min-height: 120px; }
+
+    .submit-btn {
+      width: 100%;
+      background: var(--blue);
+      color: var(--white);
+      border: none;
+      padding: 1rem;
+      border-radius: 6px;
+      font-family: 'Inter', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.2s;
+      margin-top: 0.5rem;
+    }
+
+    .submit-btn:hover {
+      background: var(--blue-light);
+      transform: translateY(-1px);
+    }
+
+    .form-note {
+      text-align: center;
+      font-size: 0.78rem;
+      color: var(--text-light);
+      margin-top: 0.8rem;
+    }
+
+    /* FOOTER */
+    footer {
+      background: var(--blue-dark);
+      padding: 3rem 5%;
+      text-align: center;
+    }
+
+    footer .footer-logo {
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: var(--white);
+      letter-spacing: 2px;
+      margin-bottom: 1rem;
+    }
+
+    footer .footer-logo span { color: var(--accent); }
+
+    footer p {
+      color: rgba(255,255,255,0.4);
+      font-size: 0.82rem;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      .hero-content,
+      .product-grid,
+      .about-grid,
+      .contact-grid { grid-template-columns: 1fr; gap: 3rem; }
+
+      .stats-grid { grid-template-columns: repeat(2, 1fr); }
+      .app-grid { grid-template-columns: 1fr 1fr; }
+      .form-row { grid-template-columns: 1fr; }
+
+      .nav-links { display: none; }
+    }
+
+    @media (max-width: 600px) {
+      .app-grid { grid-template-columns: 1fr; }
+      .product-features { grid-template-columns: 1fr; }
+      .about-stats-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">FILI<span>PAC</span></a>
+  <ul class="nav-links">
+    <li><a href="#produto">Produto</a></li>
+    <li><a href="#aplicacoes">Aplicações</a></li>
+    <li><a href="#sobre">Sobre</a></li>
+    <li><a href="#contato" class="nav-cta">Fale Conosco</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-content">
+    <div class="hero-text">
+      <div class="hero-badge">Chub Packaging Technology</div>
+      <h1>Máquinas que<br /><span>transformam</span><br />indústrias</h1>
+      <p>Equipamentos de alta performance para embalagem de explosivos e produtos viscosos. Tecnologia desenvolvida para segurança e eficiência máximas na sua linha de produção.</p>
+      <div class="hero-buttons">
+        <a href="#contato" class="btn-primary">Solicitar Proposta</a>
+        <a href="#produto" class="btn-secondary">Conhecer o ExPlus</a>
+      </div>
+      <div class="machine-name" style="margin-top: 2rem;">
+        <div>
+          <div class="model">ExPlus 2000</div>
+          <div class="tag">Produto Principal</div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-image">
+      <!-- Substitua o src pela imagem real da máquina -->
+      <img src="explus2000.png" alt="Filipac ExPlus 2000 - Chub Packaging Technology" />
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats">
+  <div class="stats-grid">
+    <div class="stat-item">
+      <div class="number">+20</div>
+      <div class="label">Anos de experiência</div>
+    </div>
+    <div class="stat-item">
+      <div class="number">+50</div>
+      <div class="label">Máquinas entregues</div>
+    </div>
+    <div class="stat-item">
+      <div class="number">750+</div>
+      <div class="label">Embalagens/hora</div>
+    </div>
+    <div class="stat-item">
+      <div class="number">Global</div>
+      <div class="label">Clientes internacionais</div>
+    </div>
+  </div>
+</div>
+
+<!-- PRODUTO -->
+<section class="product" id="produto">
+  <div class="section-inner">
+    <div class="product-grid">
+      <div>
+        <div class="section-label">Produto Principal</div>
+        <h2 class="section-title">ExPlus 2000<br />Chub Packaging</h2>
+        <p class="section-desc">Equipamento versátil e de alta performance para embalagem em filme flexível, gerando cartuchos cilíndricos com clipe em cada extremidade.</p>
+
+        <div class="product-features">
+          <div class="feature-card">
+            <div class="icon">⚡</div>
+            <h4>Alta Produtividade</h4>
+            <p>Até 750+ embalagens por hora em operação contínua</p>
+          </div>
+          <div class="feature-card">
+            <div class="icon">🛡️</div>
+            <h4>Segurança</h4>
+            <p>Projetado com rigorosos padrões de segurança para explosivos</p>
+          </div>
+          <div class="feature-card">
+            <div class="icon">🎛️</div>
+            <h4>HMI Intuitivo</h4>
+            <p>Interface touchscreen com controle completo de parâmetros</p>
+          </div>
+          <div class="feature-card">
+            <div class="icon">🔧</div>
+            <h4>Fácil Manutenção</h4>
+            <p>Acesso facilitado a componentes e documentação técnica completa</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-specs">
+        <h3>Especificações Técnicas — ExPlus 2000</h3>
+        <div class="spec-row">
+          <span class="spec-key">Modelo</span>
+          <span class="spec-val">ExPlus 2000</span>
+        </div>
+        <div class="spec-row">
+          <span class="spec-key">Tecnologia</span>
+          <span class="spec-val">Chub Packaging</span>
+        </div>
+        <div class="spec-row">
+          <span class="spec-key">Tipo de embalagem</span>
+          <span class="spec-val">Filme flexível / Cartucho cilíndrico</span>
+        </div>
+        <div class="spec-row">
+          <span class="spec-key">Fechamento</span>
+          <span class="spec-val">Clipe metálico (wire clip)</span>
+        </div>
+        <div class="spec-row">
+          <span class="spec-key">Interface</span>
+          <span class="spec-val">HMI Touchscreen</span>
+        </div>
+        <div class="spec-row">
+          <span class="spec-key">Aplicação</span>
+          <span class="spec-val">Explosivos e produtos viscosos</span>
+        </div>
+        <div class="spec-row">
+          <span class="spec-key">Fabricante</span>
+          <span class="spec-val">Filipac</span>
+        </div>
+        <div style="margin-top: 1.5rem;">
+          <a href="#contato" class="btn-primary" style="display:block; text-align:center;">Solicitar ficha técnica completa</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- APLICAÇÕES -->
+<section class="applications" id="aplicacoes">
+  <div class="section-inner">
+    <div style="text-align:center; margin-bottom: 1rem;">
+      <div class="section-label" style="justify-content:center; display:flex;">Versatilidade</div>
+      <h2 class="section-title" style="text-align:center;">Aplicações do ExPlus</h2>
+      <p class="section-desc" style="margin: 0 auto; text-align:center;">Equipamento desenvolvido para trabalhar com uma ampla gama de produtos explosivos e viscosos.</p>
+    </div>
+    <div class="app-grid">
+      <div class="app-card">
+        <div class="app-icon">💥</div>
+        <h3>Emulsão a Gás</h3>
+        <p>Embalagem precisa de emulsão a gás com controle rigoroso de pressão e temperatura.</p>
+      </div>
+      <div class="app-card">
+        <div class="app-icon">🔬</div>
+        <h3>Emulsão Sensibilizada</h3>
+        <p>Compatível com emulsão sensibilizada com microesferas, garantindo integridade do produto.</p>
+      </div>
+      <div class="app-card">
+        <div class="app-icon">⚗️</div>
+        <h3>ANFO</h3>
+        <p>Embalagem de ANFO com velocidade e precisão, mantendo especificações técnicas.</p>
+      </div>
+      <div class="app-card">
+        <div class="app-icon">💧</div>
+        <h3>WaterGel / Slurry</h3>
+        <p>Processamento de produtos aquosos e semiviscosos com vedação perfeita.</p>
+      </div>
+      <div class="app-card">
+        <div class="app-icon">🧪</div>
+        <h3>Produtos Viscosos</h3>
+        <p>Adaptável para diversos produtos viscosos e semiviscosos além de explosivos.</p>
+      </div>
+      <div class="app-card">
+        <div class="app-icon">🏭</div>
+        <h3>Projetos Especiais</h3>
+        <p>Soluções customizadas para necessidades específicas da sua linha de produção.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SOBRE -->
+<section class="about" id="sobre">
+  <div class="section-inner">
+    <div class="about-grid">
+      <div>
+        <div class="section-label">Quem Somos</div>
+        <h2 class="section-title">Sobre a Filipac</h2>
+        <p>A Filipac é especialista no desenvolvimento e fabricação de máquinas de embalagem para a indústria de explosivos. Com décadas de experiência, entregamos equipamentos que unem performance, segurança e confiabilidade.</p>
+        <p>Nossa tecnologia ExPlus é referência no mercado, com clientes em diversas partes do mundo. Cada máquina é projetada para operar em condições industriais exigentes, com suporte técnico completo.</p>
+        <div class="about-points">
+          <div class="about-point">Documentação técnica completa (operação, diagramas, manutenção)</div>
+          <div class="about-point">Suporte técnico especializado pós-venda</div>
+          <div class="about-point">Treinamento de operadores incluído</div>
+          <div class="about-point">Peças de reposição disponíveis</div>
+        </div>
+      </div>
+      <div class="about-image-area">
+        <div class="big-number">+20</div>
+        <div class="big-label">anos transformando indústrias</div>
+        <div class="about-stats-grid">
+          <div class="about-stat">
+            <div class="num">+50</div>
+            <div class="lbl">Máquinas entregues</div>
+          </div>
+          <div class="about-stat">
+            <div class="num">Global</div>
+            <div class="lbl">Presença internacional</div>
+          </div>
+          <div class="about-stat">
+            <div class="num">100%</div>
+            <div class="lbl">Suporte técnico</div>
+          </div>
+          <div class="about-stat">
+            <div class="num">ISO</div>
+            <div class="lbl">Qualidade certificada</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTATO -->
+<section class="contact" id="contato">
+  <div class="section-inner">
+    <div class="contact-grid">
+      <div class="contact-info">
+        <div class="section-label">Contato</div>
+        <h2 class="section-title">Fale com nossa equipe</h2>
+        <p>Tem interesse no ExPlus ou precisa de uma solução personalizada? Preencha o formulário e nossa equipe entrará em contato em até 1 dia útil.</p>
+        <div class="contact-detail">
+          <div class="icon">📧</div>
+          <span>contato@filipac.com.br</span>
+        </div>
+        <div class="contact-detail">
+          <div class="icon">📞</div>
+          <span>(XX) XXXX-XXXX</span>
+        </div>
+        <div class="contact-detail">
+          <div class="icon">📍</div>
+          <span>Brasil</span>
+        </div>
+      </div>
+
+      <!--
+        INSTRUÇÃO: Crie uma conta gratuita em formspree.io
+        Substitua "SEU_ID_FORMSPREE" pelo ID do seu formulário
+        Exemplo: action="https://formspree.io/f/abcd1234"
+      -->
+      <form action="https://formspree.io/f/xdavwooa" method="POST">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="nome">Nome completo *</label>
+            <input type="text" id="nome" name="nome" placeholder="Seu nome" required />
+          </div>
+          <div class="form-group">
+            <label for="empresa">Empresa *</label>
+            <input type="text" id="empresa" name="empresa" placeholder="Nome da empresa" required />
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="email">E-mail *</label>
+            <input type="email" id="email" name="email" placeholder="email@empresa.com" required />
+          </div>
+          <div class="form-group">
+            <label for="telefone">Telefone</label>
+            <input type="tel" id="telefone" name="telefone" placeholder="(XX) XXXXX-XXXX" />
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="interesse">Interesse</label>
+          <select id="interesse" name="interesse">
+            <option value="">Selecione...</option>
+            <option value="explus">ExPlus 2000 — Compra</option>
+            <option value="orcamento">Solicitar orçamento</option>
+            <option value="tecnico">Suporte técnico</option>
+            <option value="pecas">Peças de reposição</option>
+            <option value="outro">Outro</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="mensagem">Mensagem</label>
+          <textarea id="mensagem" name="mensagem" placeholder="Descreva sua necessidade ou dúvida..."></textarea>
+        </div>
+        <button type="submit" class="submit-btn">Enviar mensagem →</button>
+        <p class="form-note">Respondemos em até 1 dia útil. Seus dados são tratados com confidencialidade.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">FILI<span>PAC</span></div>
+  <p>© 2025 Filipac. Todos os direitos reservados.</p>
+  <p style="margin-top: 0.4rem;">filipac.com.br</p>
+</footer>
+
+</body>
+</html>
