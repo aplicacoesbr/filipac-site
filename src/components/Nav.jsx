@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import logo from '../assets/filipac.png'
 
 export default function Nav() {
   const [scrolled, setScrolled] = useState(false)
@@ -14,7 +15,9 @@ export default function Nav() {
 
   return (
     <nav className={`nav${scrolled ? ' scrolled' : ''}`}>
-      <a href="#" className="nav-logo">FILI<span>PAC</span></a>
+      <a href="#" className="nav-logo">
+        <img src={logo} alt="Filipac" className="nav-logo-img" />
+      </a>
 
       <ul className={`nav-links${menuOpen ? ' open' : ''}`}>
         <li><a href="#produto" onClick={close}>Produto</a></li>
