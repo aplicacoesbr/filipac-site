@@ -75,7 +75,7 @@ body {
   align-items: center;
   justify-content: space-between;
   padding: 0 5%;
-  height: 70px;
+  height: 90px;
   background: rgba(0, 31, 77, 0.85);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
@@ -84,7 +84,7 @@ body {
 .nav.scrolled {
   background: rgba(0, 15, 40, 0.97);
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.4);
-  height: 62px;
+  height: 76px;
 }
 
 .nav-logo {
@@ -93,7 +93,7 @@ body {
   align-items: center;
 }
 .nav-logo-img {
-  height: 56px;
+  height: 72px;
   width: auto;
   object-fit: contain;
 }
@@ -160,7 +160,7 @@ body {
   background: linear-gradient(135deg, var(--blue-dark) 0%, var(--blue) 55%, #0a4a9e 100%);
   display: flex;
   align-items: center;
-  padding: 100px 5% 60px;
+  padding: 120px 5% 60px;
   position: relative;
   overflow: hidden;
 }
