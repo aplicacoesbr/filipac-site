@@ -21,11 +21,11 @@ export default function Contact() {
             </div>
             <div className="contact-detail">
               <div className="icon">📞</div>
-              <span>(XX) XXXX-XXXX</span>
+              <span>(24) 98111-9365</span>
             </div>
             <div className="contact-detail">
               <div className="icon">📍</div>
-              <span>Brasil</span>
+              <span>R. Monsaras, 19 - Magalhães Bastos, Rio de Janeiro - RJ, 21735-050</span>
             </div>
           </div>
 
