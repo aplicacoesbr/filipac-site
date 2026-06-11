@@ -4,7 +4,7 @@
   --blue: #003b82;
   --blue-light: #0057c2;
   --blue-dark: #001f4d;
-  --accent: #e8a000;
+  --accent: #4da6ff;
   --gray: #f5f6f8;
   --text: #1a1a2e;
   --text-light: #5a6070;
@@ -126,7 +126,7 @@ body {
 
 .nav-cta {
   background: var(--accent) !important;
-  color: var(--blue-dark) !important;
+  color: var(--white) !important;
   padding: 0.45rem 1.1rem;
   border-radius: 4px;
   font-weight: 700 !important;
@@ -238,7 +238,7 @@ body {
 .hero h1 .accent {
   color: var(--accent);
   display: inline-block;
-  background: linear-gradient(90deg, #e8a000, #ffcc55, #e8a000);
+  background: linear-gradient(90deg, #4da6ff, #a8d4ff, #4da6ff);
   background-size: 200% auto;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -264,7 +264,7 @@ body {
 
 .btn-primary {
   background: var(--accent);
-  color: var(--blue-dark);
+  color: var(--white);
   padding: 0.9rem 2.1rem;
   border-radius: 5px;
   font-weight: 700;
