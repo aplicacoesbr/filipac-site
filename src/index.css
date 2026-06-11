@@ -75,7 +75,7 @@ body {
   align-items: center;
   justify-content: space-between;
   padding: 0 5%;
-  height: 90px;
+  height: 110px;
   background: rgba(0, 31, 77, 0.85);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
@@ -84,7 +84,7 @@ body {
 .nav.scrolled {
   background: rgba(0, 15, 40, 0.97);
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.4);
-  height: 76px;
+  height: 90px;
 }
 
 .nav-logo {
@@ -93,7 +93,7 @@ body {
   align-items: center;
 }
 .nav-logo-img {
-  height: 72px;
+  height: 100px;
   width: auto;
   object-fit: contain;
 }
@@ -729,10 +729,10 @@ footer {
   justify-content: center;
 }
 .footer-logo-img {
-  height: 36px;
+  height: 70px;
   width: auto;
   object-fit: contain;
-  opacity: 0.85;
+  opacity: 0.9;
 }
 footer p {
   color: rgba(255,255,255,0.35);
