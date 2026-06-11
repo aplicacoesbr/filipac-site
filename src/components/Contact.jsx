@@ -1,4 +1,5 @@
 import { useScrollReveal } from '../hooks/useScrollReveal'
+import { MdEmail, MdPhone, MdLocationOn } from 'react-icons/md'
 
 export default function Contact() {
   const leftRef = useScrollReveal()
@@ -16,15 +17,15 @@ export default function Contact() {
               Preencha o formulário e nossa equipe entrará em contato em até 1 dia útil.
             </p>
             <div className="contact-detail">
-              <div className="icon">📧</div>
+              <div className="icon"><MdEmail size={20} /></div>
               <span>contato@filipac.com.br</span>
             </div>
             <div className="contact-detail">
-              <div className="icon">📞</div>
+              <div className="icon"><MdPhone size={20} /></div>
               <span>(24) 98111-9365</span>
             </div>
             <div className="contact-detail">
-              <div className="icon">📍</div>
+              <div className="icon"><MdLocationOn size={20} /></div>
               <span>R. Monsaras, 19 - Magalhães Bastos, Rio de Janeiro - RJ, 21735-050</span>
             </div>
           </div>
