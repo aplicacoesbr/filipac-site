@@ -1,10 +1,11 @@
 import { useScrollReveal } from '../hooks/useScrollReveal'
+import { MdBolt, MdSecurity, MdTouchApp, MdBuild } from 'react-icons/md'
 
 const features = [
-  { icon: '⚡', title: 'Alta Produtividade', desc: 'Até 120 cartuchos por minuto em operação contínua' },
-  { icon: '🛡️', title: 'Segurança', desc: 'Projetado com rigorosos padrões de segurança para explosivos' },
-  { icon: '🎛️', title: 'HMI Intuitivo', desc: 'Interface touchscreen com controle completo de parâmetros' },
-  { icon: '🔧', title: 'Fácil Manutenção', desc: 'Acesso facilitado a componentes e documentação técnica completa' },
+  { icon: <MdBolt size={28} />, title: 'Alta Produtividade', desc: 'Até 120 cartuchos por minuto em operação contínua' },
+  { icon: <MdSecurity size={28} />, title: 'Segurança', desc: 'Projetado com rigorosos padrões de segurança para explosivos' },
+  { icon: <MdTouchApp size={28} />, title: 'HMI Intuitivo', desc: 'Interface touchscreen com controle completo de parâmetros' },
+  { icon: <MdBuild size={28} />, title: 'Fácil Manutenção', desc: 'Acesso facilitado a componentes e documentação técnica completa' },
 ]
 
 const specs = [
