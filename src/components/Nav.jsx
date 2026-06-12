@@ -28,13 +28,17 @@ export default function Nav() {
           <li><a href="#sobre" onClick={close}>{t.nav.about}</a></li>
           <li><a href="#contato" className="nav-cta" onClick={close}>{t.nav.contact}</a></li>
         </ul>
-        <button
-          className="lang-btn"
-          onClick={() => setLang(lang === 'pt' ? 'en' : 'pt')}
-          aria-label="Mudar idioma"
-        >
-          {lang === 'pt' ? 'EN' : 'PT'}
-        </button>
+        <div className="lang-toggle" aria-label="Mudar idioma">
+          <button
+            className={`lang-opt${lang === 'pt' ? ' active' : ''}`}
+            onClick={() => setLang('pt')}
+          >PT</button>
+          <span className="lang-sep">|</span>
+          <button
+            className={`lang-opt${lang === 'en' ? ' active' : ''}`}
+            onClick={() => setLang('en')}
+          >EN</button>
+        </div>
         <button
           className={`hamburger${menuOpen ? ' open' : ''}`}
           onClick={() => setMenuOpen(v => !v)}
