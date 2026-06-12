@@ -9,8 +9,8 @@ const points = [
 
 const miniStats = [
   { num: '+50', lbl: 'Máquinas entregues' },
-  { num: 'Global', lbl: 'Presença internacional' },
   { num: '100%', lbl: 'Suporte técnico' },
+  { num: 'Global', lbl: 'Presença internacional', full: true },
 ]
 
 export default function About() {
@@ -48,7 +48,7 @@ export default function About() {
             <div className="big-label">anos transformando indústrias</div>
             <div className="about-stats-grid">
               {miniStats.map(s => (
-                <div key={s.lbl} className="about-stat">
+                <div key={s.lbl} className={`about-stat${s.full ? ' about-stat-full' : ''}`}>
                   <div className="num">{s.num}</div>
                   <div className="lbl">{s.lbl}</div>
                 </div>
