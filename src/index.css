@@ -93,7 +93,7 @@ body {
   align-items: center;
 }
 .nav-logo-img {
-  height: 100px;
+  height: 70px;
   width: auto;
   object-fit: contain;
   mix-blend-mode: screen;
