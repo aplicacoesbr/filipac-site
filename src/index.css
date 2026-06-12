@@ -96,6 +96,7 @@ body {
   height: 100px;
   width: auto;
   object-fit: contain;
+  mix-blend-mode: screen;
 }
 
 .nav-links {
@@ -732,7 +733,7 @@ footer {
   height: 70px;
   width: auto;
   object-fit: contain;
-  opacity: 0.9;
+  mix-blend-mode: screen;
 }
 footer p {
   color: rgba(255,255,255,0.35);
