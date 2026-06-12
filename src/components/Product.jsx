@@ -1,42 +1,27 @@
 import { useScrollReveal } from '../hooks/useScrollReveal'
+import { useLang } from '../context/LangContext'
 import { MdBolt, MdSecurity, MdTouchApp, MdBuild } from 'react-icons/md'
 
-const features = [
-  { icon: <MdBolt size={28} />, title: 'Alta Produtividade', desc: 'Até 120 cartuchos por minuto em operação contínua' },
-  { icon: <MdSecurity size={28} />, title: 'Segurança', desc: 'Projetado com rigorosos padrões de segurança para explosivos' },
-  { icon: <MdTouchApp size={28} />, title: 'HMI Intuitivo', desc: 'Interface touchscreen com controle completo de parâmetros' },
-  { icon: <MdBuild size={28} />, title: 'Fácil Manutenção', desc: 'Acesso facilitado a componentes e documentação técnica completa' },
-]
-
-const specs = [
-  { key: 'Modelo', val: 'ExPlus 2000' },
-  { key: 'Tecnologia', val: 'Chub Packaging' },
-  { key: 'Tipo de embalagem', val: 'Filme flexível / Cartucho cilíndrico' },
-  { key: 'Fechamento', val: 'Clipe metálico (wire clip)' },
-  { key: 'Interface', val: 'HMI Touchscreen' },
-  { key: 'Aplicação', val: 'Explosivos e produtos viscosos' },
-  { key: 'Fabricante', val: 'Filipac' },
-]
+const ICONS = [<MdBolt size={28} />, <MdSecurity size={28} />, <MdTouchApp size={28} />, <MdBuild size={28} />]
 
 export default function Product() {
   const leftRef = useScrollReveal()
   const rightRef = useScrollReveal()
+  const { t } = useLang()
+  const p = t.product
 
   return (
     <section className="product" id="produto">
       <div className="section-inner">
         <div className="product-grid">
           <div ref={leftRef} className="reveal from-left">
-            <div className="section-label">Produto Principal</div>
-            <h2 className="section-title">ExPlus 2000<br />Chub Packaging</h2>
-            <p className="section-desc">
-              Equipamento versátil e de alta performance para embalagem em filme flexível,
-              gerando cartuchos cilíndricos com clipe em cada extremidade.
-            </p>
+            <div className="section-label">{p.label}</div>
+            <h2 className="section-title">{p.title1}<br />{p.title2}</h2>
+            <p className="section-desc">{p.desc}</p>
             <div className="product-features">
-              {features.map((f, i) => (
-                <div key={f.title} className={`feature-card d${i + 1}`}>
-                  <span className="icon">{f.icon}</span>
+              {p.features.map((f, i) => (
+                <div key={i} className={`feature-card d${i + 1}`}>
+                  <span className="icon">{ICONS[i]}</span>
                   <h4>{f.title}</h4>
                   <p>{f.desc}</p>
                 </div>
@@ -45,8 +30,8 @@ export default function Product() {
           </div>
 
           <div ref={rightRef} className="product-specs reveal from-right">
-            <h3>Especificações Técnicas — ExPlus 2000</h3>
-            {specs.map(s => (
+            <h3>{p.specsTitle}</h3>
+            {p.specs.map(s => (
               <div key={s.key} className="spec-row">
                 <span className="spec-key">{s.key}</span>
                 <span className="spec-val">{s.val}</span>
@@ -54,7 +39,7 @@ export default function Product() {
             ))}
             <div style={{ marginTop: '1.5rem' }}>
               <a href="#contato" className="btn-primary" style={{ display: 'block', textAlign: 'center' }}>
-                Solicitar ficha técnica completa
+                {p.specsCta}
               </a>
             </div>
           </div>

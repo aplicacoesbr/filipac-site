@@ -1,6 +1,9 @@
 import expluspng from '../assets/explus2000.png'
+import { useLang } from '../context/LangContext'
 
 export default function Hero() {
+  const { t } = useLang()
+
   return (
     <section className="hero">
       <div className="hero-grid-bg" />
@@ -8,33 +11,26 @@ export default function Hero() {
         <div className="hero-text">
           <div className="hero-badge">
             <span className="hero-badge-dot" />
-            Chub Packaging Technology
+            {t.hero.badge}
           </div>
 
           <h1>
-            Máquinas que<br />
-            <span className="accent">transformam</span><br />
-            indústrias
+            {t.hero.line1}<br />
+            <span className="accent">{t.hero.line2}</span><br />
+            {t.hero.line3}
           </h1>
 
-          <p className="hero-desc">
-            Equipamentos de alta performance para embalagem de explosivos e produtos viscosos.
-            Tecnologia desenvolvida para segurança e eficiência máximas na sua linha de produção.
-          </p>
+          <p className="hero-desc">{t.hero.desc}</p>
 
           <div className="hero-buttons">
-            <a href="#contato" className="btn-primary">
-              Solicitar Proposta →
-            </a>
-            <a href="#produto" className="btn-secondary">
-              Conhecer o ExPlus
-            </a>
+            <a href="#contato" className="btn-primary">{t.hero.cta1}</a>
+            <a href="#produto" className="btn-secondary">{t.hero.cta2}</a>
           </div>
 
           <div className="machine-badge">
             <div>
               <div className="model">ExPlus 2000</div>
-              <div className="tag">Produto Principal</div>
+              <div className="tag">{t.hero.modelTag}</div>
             </div>
           </div>
         </div>

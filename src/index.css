@@ -137,6 +137,33 @@ body {
 .nav-cta::after { display: none !important; }
 .nav-cta:hover { opacity: 0.9; }
 
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.lang-btn {
+  background: transparent;
+  border: 1.5px solid rgba(255,255,255,0.35);
+  color: rgba(255,255,255,0.85);
+  font-family: 'Inter', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  padding: 0.3rem 0.7rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: border-color 0.2s, color 0.2s, background 0.2s;
+}
+.lang-btn:hover {
+  border-color: var(--cta);
+  color: var(--cta);
+}
+
+/* Hide lang-btn inside nav-links on desktop (shown in nav-right instead) */
+.nav-links .lang-btn { display: none; }
+
 .hamburger {
   display: none;
   flex-direction: column;
@@ -767,6 +794,8 @@ footer p {
   .form-row { grid-template-columns: 1fr; }
   .nav-links { display: none; }
   .hamburger { display: flex; }
+  .nav-links .lang-btn { display: flex; }
+  .nav-right .lang-btn { display: none; }
   .nav-links.open {
     display: flex;
     flex-direction: column;

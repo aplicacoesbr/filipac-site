@@ -1,22 +1,24 @@
 import { useScrollReveal } from '../hooks/useScrollReveal'
 import { MdEmail, MdLocationOn, MdChevronRight } from 'react-icons/md'
 import { FaWhatsapp } from 'react-icons/fa'
+import { useLang } from '../context/LangContext'
 
 export default function Contact() {
   const leftRef = useScrollReveal()
   const rightRef = useScrollReveal()
+  const { t } = useLang()
+  const c = t.contact
+  const f = c.fields
 
   return (
     <section className="contact" id="contato">
       <div className="section-inner">
         <div className="contact-grid">
           <div ref={leftRef} className="contact-info reveal from-left">
-            <div className="section-label">Contato</div>
-            <h2 className="section-title">Fale com nossa equipe</h2>
-            <p>
-              Tem interesse no ExPlus ou precisa de uma solução personalizada?
-              Preencha o formulário e nossa equipe entrará em contato em até 1 dia útil.
-            </p>
+            <div className="section-label">{c.label}</div>
+            <h2 className="section-title">{c.title}</h2>
+            <p>{c.desc}</p>
+
             <a className="contact-detail" href="mailto:contato@filipac.com.br">
               <div className="icon"><MdEmail size={20} /></div>
               <span>contato@filipac.com.br</span>
@@ -34,49 +36,40 @@ export default function Contact() {
             </a>
           </div>
 
-          <form
-            ref={rightRef}
-            className="contact-form reveal from-right"
-            action="https://formspree.io/f/xdavwooa"
-            method="POST"
-          >
+          <form ref={rightRef} className="contact-form reveal from-right" action="https://formspree.io/f/xdavwooa" method="POST">
             <div className="form-row">
               <div className="form-group">
-                <label htmlFor="nome">Nome completo *</label>
-                <input type="text" id="nome" name="nome" placeholder="Seu nome" required />
+                <label htmlFor="nome">{f.name}</label>
+                <input type="text" id="nome" name="nome" placeholder={f.namePh} required />
               </div>
               <div className="form-group">
-                <label htmlFor="empresa">Empresa *</label>
-                <input type="text" id="empresa" name="empresa" placeholder="Nome da empresa" required />
+                <label htmlFor="empresa">{f.company}</label>
+                <input type="text" id="empresa" name="empresa" placeholder={f.companyPh} required />
               </div>
             </div>
             <div className="form-row">
               <div className="form-group">
-                <label htmlFor="email">E-mail *</label>
-                <input type="email" id="email" name="email" placeholder="email@empresa.com" required />
+                <label htmlFor="email">{f.email}</label>
+                <input type="email" id="email" name="email" placeholder={f.emailPh} required />
               </div>
               <div className="form-group">
-                <label htmlFor="telefone">Telefone</label>
-                <input type="tel" id="telefone" name="telefone" placeholder="(XX) XXXXX-XXXX" />
+                <label htmlFor="telefone">{f.phone}</label>
+                <input type="tel" id="telefone" name="telefone" placeholder={f.phonePh} />
               </div>
             </div>
             <div className="form-group">
-              <label htmlFor="interesse">Interesse</label>
+              <label htmlFor="interesse">{f.interest}</label>
               <select id="interesse" name="interesse">
-                <option value="">Selecione...</option>
-                <option value="explus">ExPlus 2000 — Compra</option>
-                <option value="orcamento">Solicitar orçamento</option>
-                <option value="tecnico">Suporte técnico</option>
-                <option value="pecas">Peças de reposição</option>
-                <option value="outro">Outro</option>
+                <option value="">{f.interestPh}</option>
+                {c.options.map(o => <option key={o.value} value={o.value}>{o.label}</option>)}
               </select>
             </div>
             <div className="form-group">
-              <label htmlFor="mensagem">Mensagem</label>
-              <textarea id="mensagem" name="mensagem" placeholder="Descreva sua necessidade ou dúvida..." />
+              <label htmlFor="mensagem">{f.message}</label>
+              <textarea id="mensagem" name="mensagem" placeholder={f.messagePh} />
             </div>
-            <button type="submit" className="submit-btn">Enviar mensagem →</button>
-            <p className="form-note">Respondemos em até 1 dia útil. Seus dados são tratados com confidencialidade.</p>
+            <button type="submit" className="submit-btn">{c.submit}</button>
+            <p className="form-note">{c.note}</p>
           </form>
         </div>
       </div>

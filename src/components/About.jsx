@@ -1,40 +1,23 @@
 import { useScrollReveal } from '../hooks/useScrollReveal'
-
-const points = [
-  'Documentação técnica completa (operação, diagramas, manutenção)',
-  'Suporte técnico especializado pós-venda',
-  'Treinamento de operadores incluído',
-  'Peças de reposição disponíveis',
-]
-
-const miniStats = [
-  { num: '+50', lbl: 'Máquinas entregues' },
-  { num: '100%', lbl: 'Suporte técnico' },
-  { num: 'Global', lbl: 'Presença internacional', full: true },
-]
+import { useLang } from '../context/LangContext'
 
 export default function About() {
   const leftRef = useScrollReveal()
   const rightRef = useScrollReveal()
+  const { t } = useLang()
+  const a = t.about
 
   return (
     <section className="about" id="sobre">
       <div className="section-inner">
         <div className="about-grid">
           <div ref={leftRef} className="reveal from-left">
-            <div className="section-label">Quem Somos</div>
-            <h2 className="section-title">Sobre a Filipac</h2>
-            <p>
-              A Filipac é especialista no desenvolvimento e fabricação de máquinas de embalagem
-              para a indústria de explosivos.
-            </p>
-            <p>
-              Nossa tecnologia ExPlus é referência no mercado, com clientes em diversas partes do
-              mundo. Cada máquina é projetada para operar em condições industriais exigentes,
-              com suporte técnico completo.
-            </p>
+            <div className="section-label">{a.label}</div>
+            <h2 className="section-title">{a.title}</h2>
+            <p>{a.p1}</p>
+            <p>{a.p2}</p>
             <div className="about-points">
-              {points.map(pt => (
+              {a.points.map(pt => (
                 <div key={pt} className="about-point">
                   <span className="about-check">✓</span>
                   {pt}
@@ -45,9 +28,9 @@ export default function About() {
 
           <div ref={rightRef} className="about-card reveal from-right">
             <div className="big-number">+20</div>
-            <div className="big-label">anos transformando indústrias</div>
+            <div className="big-label">{a.bigLabel}</div>
             <div className="about-stats-grid">
-              {miniStats.map(s => (
+              {a.stats.map(s => (
                 <div key={s.lbl} className={`about-stat${s.full ? ' about-stat-full' : ''}`}>
                   <div className="num">{s.num}</div>
                   <div className="lbl">{s.lbl}</div>
