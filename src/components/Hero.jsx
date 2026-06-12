@@ -1,11 +1,9 @@
 import expluspng from '../assets/explus2000.png'
-import GlobeBackground from './GlobeBackground'
 
 export default function Hero() {
   return (
     <section className="hero">
       <div className="hero-grid-bg" />
-      <GlobeBackground />
       <div className="hero-content">
         <div className="hero-text">
           <div className="hero-badge">
