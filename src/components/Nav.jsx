@@ -21,6 +21,14 @@ export default function Nav() {
         <img src={logo} alt="Filipac" className="nav-logo-img" />
       </a>
 
+      <div className="nav-center">
+        <div className="lang-toggle" aria-label="Mudar idioma">
+          <button className={`lang-opt${lang === 'pt' ? ' active' : ''}`} onClick={() => setLang('pt')}>PT</button>
+          <span className="lang-sep">|</span>
+          <button className={`lang-opt${lang === 'en' ? ' active' : ''}`} onClick={() => setLang('en')}>EN</button>
+        </div>
+      </div>
+
       <div className="nav-right">
         <ul className={`nav-links${menuOpen ? ' open' : ''}`}>
           <li><a href="#produto" onClick={close}>{t.nav.product}</a></li>
@@ -28,17 +36,6 @@ export default function Nav() {
           <li><a href="#sobre" onClick={close}>{t.nav.about}</a></li>
           <li><a href="#contato" className="nav-cta" onClick={close}>{t.nav.contact}</a></li>
         </ul>
-        <div className="lang-toggle" aria-label="Mudar idioma">
-          <button
-            className={`lang-opt${lang === 'pt' ? ' active' : ''}`}
-            onClick={() => setLang('pt')}
-          >PT</button>
-          <span className="lang-sep">|</span>
-          <button
-            className={`lang-opt${lang === 'en' ? ' active' : ''}`}
-            onClick={() => setLang('en')}
-          >EN</button>
-        </div>
         <button
           className={`hamburger${menuOpen ? ' open' : ''}`}
           onClick={() => setMenuOpen(v => !v)}
