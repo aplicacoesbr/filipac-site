@@ -1,4 +1,4 @@
-import logo from '../assets/filipac.jpg'
+import logo from '../assets/logo_filipac.png'
 
 export default function Footer() {
   return (
