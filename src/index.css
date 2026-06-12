@@ -5,6 +5,7 @@
   --blue-light: #0057c2;
   --blue-dark: #001f4d;
   --accent: #4da6ff;
+  --cta: #22d3ee;
   --gray: #f5f6f8;
   --text: #1a1a2e;
   --text-light: #5a6070;
@@ -126,8 +127,8 @@ body {
 .nav-links a:hover::after { width: 100%; }
 
 .nav-cta {
-  background: var(--accent) !important;
-  color: var(--white) !important;
+  background: var(--cta) !important;
+  color: var(--blue-dark) !important;
   padding: 0.45rem 1.1rem;
   border-radius: 4px;
   font-weight: 700 !important;
@@ -264,8 +265,8 @@ body {
 }
 
 .btn-primary {
-  background: var(--accent);
-  color: var(--white);
+  background: var(--cta);
+  color: var(--blue-dark);
   padding: 0.9rem 2.1rem;
   border-radius: 5px;
   font-weight: 700;
