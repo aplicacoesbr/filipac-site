@@ -1,5 +1,5 @@
 import { useScrollReveal } from '../hooks/useScrollReveal'
-import { MdEmail, MdPhone, MdLocationOn } from 'react-icons/md'
+import { MdEmail, MdPhone, MdLocationOn, MdChevronRight } from 'react-icons/md'
 
 export default function Contact() {
   const leftRef = useScrollReveal()
@@ -19,14 +19,17 @@ export default function Contact() {
             <a className="contact-detail" href="mailto:contato@filipac.com.br">
               <div className="icon"><MdEmail size={20} /></div>
               <span>contato@filipac.com.br</span>
+              <MdChevronRight size={18} style={{ marginLeft: 'auto', opacity: 0.4 }} />
             </a>
             <a className="contact-detail" href="https://wa.me/5524981119365" target="_blank" rel="noopener noreferrer">
               <div className="icon"><MdPhone size={20} /></div>
               <span>(24) 98111-9365</span>
+              <MdChevronRight size={18} style={{ marginLeft: 'auto', opacity: 0.4 }} />
             </a>
             <a className="contact-detail" href="https://www.google.com/maps/search/?api=1&query=R.+Monsaras,+19,+Magalhães+Bastos,+Rio+de+Janeiro,+RJ,+21735-050" target="_blank" rel="noopener noreferrer">
               <div className="icon"><MdLocationOn size={20} /></div>
               <span>R. Monsaras, 19 - Magalhães Bastos, Rio de Janeiro - RJ, 21735-050</span>
+              <MdChevronRight size={18} style={{ marginLeft: 'auto', opacity: 0.4, flexShrink: 0 }} />
             </a>
           </div>
 
