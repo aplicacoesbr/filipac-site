@@ -21,23 +21,13 @@ export default function Nav() {
         <img src={logo} alt="Filipac" className="nav-logo-img" />
       </a>
 
-      <ul className={`nav-links${menuOpen ? ' open' : ''}`}>
-        <li><a href="#produto" onClick={close}>{t.nav.product}</a></li>
-        <li><a href="#aplicacoes" onClick={close}>{t.nav.applications}</a></li>
-        <li><a href="#sobre" onClick={close}>{t.nav.about}</a></li>
-        <li><a href="#contato" className="nav-cta" onClick={close}>{t.nav.contact}</a></li>
-        <li>
-          <button
-            className="lang-btn"
-            onClick={() => { setLang(lang === 'pt' ? 'en' : 'pt'); close() }}
-            aria-label="Mudar idioma"
-          >
-            {lang === 'pt' ? 'EN' : 'PT'}
-          </button>
-        </li>
-      </ul>
-
       <div className="nav-right">
+        <ul className={`nav-links${menuOpen ? ' open' : ''}`}>
+          <li><a href="#produto" onClick={close}>{t.nav.product}</a></li>
+          <li><a href="#aplicacoes" onClick={close}>{t.nav.applications}</a></li>
+          <li><a href="#sobre" onClick={close}>{t.nav.about}</a></li>
+          <li><a href="#contato" className="nav-cta" onClick={close}>{t.nav.contact}</a></li>
+        </ul>
         <button
           className="lang-btn"
           onClick={() => setLang(lang === 'pt' ? 'en' : 'pt')}
