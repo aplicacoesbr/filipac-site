@@ -16,18 +16,18 @@ export default function Contact() {
               Tem interesse no ExPlus ou precisa de uma solução personalizada?
               Preencha o formulário e nossa equipe entrará em contato em até 1 dia útil.
             </p>
-            <div className="contact-detail">
+            <a className="contact-detail" href="mailto:contato@filipac.com.br">
               <div className="icon"><MdEmail size={20} /></div>
               <span>contato@filipac.com.br</span>
-            </div>
-            <div className="contact-detail">
+            </a>
+            <a className="contact-detail" href="https://wa.me/5524981119365" target="_blank" rel="noopener noreferrer">
               <div className="icon"><MdPhone size={20} /></div>
               <span>(24) 98111-9365</span>
-            </div>
-            <div className="contact-detail">
+            </a>
+            <a className="contact-detail" href="https://www.google.com/maps/search/?api=1&query=R.+Monsaras,+19,+Magalhães+Bastos,+Rio+de+Janeiro,+RJ,+21735-050" target="_blank" rel="noopener noreferrer">
               <div className="icon"><MdLocationOn size={20} /></div>
               <span>R. Monsaras, 19 - Magalhães Bastos, Rio de Janeiro - RJ, 21735-050</span>
-            </div>
+            </a>
           </div>
 
           <form
