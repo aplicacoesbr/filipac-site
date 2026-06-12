@@ -183,6 +183,20 @@ body {
   pointer-events: none;
 }
 
+/* ─── GLOBE BACKGROUND ────────────────────────────── */
+.globe-bg {
+  position: absolute;
+  right: 2%;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 560px;
+  height: 560px;
+  color: rgba(255, 255, 255, 0.1);
+  pointer-events: none;
+  z-index: 0;
+}
+@media (max-width: 900px) { .globe-bg { display: none; } }
+
 .hero-grid-bg {
   position: absolute;
   inset: 0;
