@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import logo from '../assets/filipac.png'
+import logo from '../assets/filipac.jpg'
 
 export default function Nav() {
   const [scrolled, setScrolled] = useState(false)
