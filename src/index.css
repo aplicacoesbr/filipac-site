@@ -94,7 +94,7 @@ body {
   align-items: center;
 }
 .nav-logo-img {
-  height: 70px;
+  height: 55px;
   width: auto;
   object-fit: contain;
   mix-blend-mode: screen;
@@ -732,7 +732,7 @@ footer {
   justify-content: center;
 }
 .footer-logo-img {
-  height: 70px;
+  height: 55px;
   width: auto;
   object-fit: contain;
   mix-blend-mode: screen;
