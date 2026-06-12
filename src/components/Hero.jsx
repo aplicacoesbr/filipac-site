@@ -1,4 +1,4 @@
-import expluspng from '../assets/explus2000.png'
+import expluspng from '../assets/explus2000.jpg'
 
 export default function Hero() {
   return (
