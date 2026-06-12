@@ -129,9 +129,10 @@ body {
 .nav-cta {
   background: var(--cta) !important;
   color: var(--blue-dark) !important;
-  padding: 0.45rem 1.1rem;
+  padding: 0.6rem 1.5rem;
   border-radius: 4px;
   font-weight: 700 !important;
+  font-size: 0.95rem !important;
 }
 .nav-cta::after { display: none !important; }
 .nav-cta:hover { opacity: 0.9; }

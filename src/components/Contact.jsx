@@ -1,5 +1,6 @@
 import { useScrollReveal } from '../hooks/useScrollReveal'
-import { MdEmail, MdPhone, MdLocationOn, MdChevronRight } from 'react-icons/md'
+import { MdEmail, MdLocationOn, MdChevronRight } from 'react-icons/md'
+import { FaWhatsapp } from 'react-icons/fa'
 
 export default function Contact() {
   const leftRef = useScrollReveal()
@@ -22,7 +23,7 @@ export default function Contact() {
               <MdChevronRight size={18} style={{ marginLeft: 'auto', opacity: 0.4 }} />
             </a>
             <a className="contact-detail" href="https://wa.me/5524981119365" target="_blank" rel="noopener noreferrer">
-              <div className="icon"><MdPhone size={20} /></div>
+              <div className="icon"><FaWhatsapp size={20} /></div>
               <span>(24) 98111-9365</span>
               <MdChevronRight size={18} style={{ marginLeft: 'auto', opacity: 0.4 }} />
             </a>
