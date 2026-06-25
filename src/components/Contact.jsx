@@ -1,6 +1,5 @@
 import { useScrollReveal } from '../hooks/useScrollReveal'
 import { MdEmail, MdLocationOn, MdChevronRight } from 'react-icons/md'
-import { FaWhatsapp } from 'react-icons/fa'
 import { useLang } from '../context/LangContext'
 
 export default function Contact() {
@@ -24,12 +23,7 @@ export default function Contact() {
               <span>contato@filipac.com.br</span>
               <MdChevronRight size={18} style={{ marginLeft: 'auto', opacity: 0.4 }} />
             </a>
-            <a className="contact-detail" href="https://wa.me/5524981119365" target="_blank" rel="noopener noreferrer">
-              <div className="icon"><FaWhatsapp size={20} /></div>
-              <span>(24) 98111-9365</span>
-              <MdChevronRight size={18} style={{ marginLeft: 'auto', opacity: 0.4 }} />
-            </a>
-            <a className="contact-detail" href="https://www.google.com/maps/search/?api=1&query=R.+Monsaras,+19,+Magalhães+Bastos,+Rio+de+Janeiro,+RJ,+21735-050" target="_blank" rel="noopener noreferrer">
+            < className="contact-detail" href="https://www.google.com/maps/search/?api=1&query=R.+Monsaras,+19,+Magalhães+Bastos,+Rio+de+Janeiro,+RJ,+21735-050" target="_blank" rel="noopener noreferrer">
               <div className="icon"><MdLocationOn size={20} /></div>
               <span>R. Monsaras, 19 - Magalhães Bastos, Rio de Janeiro - RJ, 21735-050</span>
               <MdChevronRight size={18} style={{ marginLeft: 'auto', opacity: 0.4, flexShrink: 0 }} />
@@ -47,15 +41,9 @@ export default function Contact() {
                 <input type="text" id="empresa" name="empresa" placeholder={f.companyPh} required />
               </div>
             </div>
-            <div className="form-row">
-              <div className="form-group">
-                <label htmlFor="email">{f.email}</label>
-                <input type="email" id="email" name="email" placeholder={f.emailPh} required />
-              </div>
-              <div className="form-group">
-                <label htmlFor="telefone">{f.phone}</label>
-                <input type="tel" id="telefone" name="telefone" placeholder={f.phonePh} />
-              </div>
+            <div className="form-group">
+              <label htmlFor="email">{f.email}</label>
+              <input type="email" id="email" name="email" placeholder={f.emailPh} required />
             </div>
             <div className="form-group">
               <label htmlFor="interesse">{f.interest}</label>

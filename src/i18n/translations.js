@@ -105,6 +105,12 @@ export const translations = {
       submit: 'Enviar mensagem →',
       note: 'Respondemos em até 1 dia útil. Seus dados são tratados com confidencialidade.',
     },
+    maintenance: {
+      badge: 'EM MANUTENÇÃO',
+      title1: 'Site em',
+      title2: 'Manutenção',
+      cta: 'Entre em contato',
+    },
     footer: {
       copy: '© 2025 Filipac. Todos os direitos reservados.',
     },
@@ -215,6 +221,12 @@ export const translations = {
       ],
       submit: 'Send message →',
       note: 'We respond within 1 business day. Your data is treated with confidentiality.',
+    },
+    maintenance: {
+      badge: 'UNDER MAINTENANCE',
+      title1: 'Site Under',
+      title2: 'Maintenance',
+      cta: 'Contact us',
     },
     footer: {
       copy: '© 2025 Filipac. All rights reserved.',

@@ -1,6 +1,10 @@
 import { MdBuildCircle, MdArrowDownward } from 'react-icons/md'
+import { useLang } from '../context/LangContext'
 
 export default function Maintenance() {
+  const { t } = useLang()
+  const m = t.maintenance
+
   return (
     <section className="maintenance">
       <div className="maintenance-grid-bg" />
@@ -10,17 +14,13 @@ export default function Maintenance() {
         </div>
         <div className="maintenance-badge">
           <span className="maintenance-badge-dot" />
-          EM MANUTENÇÃO
+          {m.badge}
         </div>
         <h1>
-          Site em <span className="accent">Manutenção</span>
+          {m.title1} <span className="accent">{m.title2}</span>
         </h1>
-        <p className="maintenance-desc">
-          Estamos trabalhando para melhorar nossa plataforma e trazer novidades em breve.<br />
-          Agradecemos a sua paciência.
-        </p>
         <a href="#contato" className="btn-primary">
-          Entre em contato
+          {m.cta}
           <MdArrowDownward size={18} />
         </a>
       </div>
