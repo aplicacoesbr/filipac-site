@@ -902,20 +902,27 @@ footer p {
 @media (max-width: 600px) {
   html { scroll-padding-top: 72px; }
 
-  /* Nav — altura fixa, padding-right no próprio nav-right para garantir espaço */
+  /* Nav — grid 2 colunas: logo cresce, nav-right alinhado à direita dentro do padding */
   .nav,
-  .nav.scrolled { height: 60px; padding: 0 0 0 14px; box-shadow: none; }
-  .nav-right { padding-right: 24px; }
-  .nav-cta { display: none; }
+  .nav.scrolled {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    height: 60px;
+    padding: 0 16px;
+    box-shadow: none;
+  }
   .nav-logo-img { height: 34px; max-width: 110px; }
-  .nav-right { gap: 8px; }
+  .nav-right {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 8px;
+    min-width: 0;
+  }
   .lang-toggle { padding: 2px 3px; }
   .lang-opt { padding: 3px 7px; font-size: 0.68rem; letter-spacing: 0.8px; }
-  .nav-cta {
-    padding: 6px 12px;
-    font-size: 0.78rem !important;
-    white-space: nowrap;
-  }
+  .nav-cta { display: none; }
 
   /* Maintenance */
   .maintenance { padding: 76px 5% 40px; }
@@ -931,17 +938,15 @@ footer p {
   section { padding: 3rem 4%; }
   .contact-form { padding: 1.4rem; border-radius: 10px; }
 
-  /* Previne zoom automático no iOS (font-size < 16px dispara zoom) */
+  /* Previne zoom automático no iOS */
   input, select, textarea { font-size: 16px; }
 }
 
 @media (max-width: 360px) {
   html { scroll-padding-top: 66px; }
-  .nav, .nav.scrolled { height: 54px; padding: 0 0 0 10px; }
-  .nav-right { padding-right: 10px; }
-  .nav-logo-img { height: 30px; max-width: 96px; }
+  .nav, .nav.scrolled { height: 54px; padding: 0 12px; }
+  .nav-logo-img { height: 30px; max-width: 90px; }
   .lang-opt { padding: 2px 5px; font-size: 0.62rem; }
-  .nav-cta { padding: 5px 10px; font-size: 0.72rem !important; }
   .maintenance { padding: 66px 5% 36px; }
   .maintenance h1 { font-size: 1.8rem; }
 }
