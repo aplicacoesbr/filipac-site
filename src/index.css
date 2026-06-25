@@ -138,16 +138,10 @@ body {
 .nav-cta::after { display: none !important; }
 .nav-cta:hover { opacity: 0.9; }
 
-.nav-center {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
 .nav-right {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
+  gap: 1.5rem;
 }
 
 .lang-toggle {
@@ -900,51 +894,35 @@ footer p {
 }
 
 @media (max-width: 600px) {
-  /* Nav: remove posição absoluta do toggle para evitar sobreposição */
-  .nav {
-    height: auto;
-    min-height: 64px;
-    padding: 0.6rem 4%;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-  }
-  .nav.scrolled { min-height: 58px; }
-  .nav-logo-img { height: 40px; }
-  .nav-center {
-    position: static;
-    transform: none;
-    order: 3;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    padding-bottom: 0.4rem;
-  }
-  .nav-right { gap: 0.5rem; }
-  .nav-cta {
-    padding: 0.45rem 1rem;
-    font-size: 0.85rem !important;
-  }
+  /* Nav — linha única fixa */
+  .nav { height: 64px; padding: 0 4%; }
+  .nav.scrolled { height: 58px; }
+  .nav-logo-img { height: 38px; }
+  .nav-right { gap: 0.6rem; }
+  .lang-opt { padding: 0.2rem 0.45rem; font-size: 0.7rem; }
+  .nav-cta { padding: 0.42rem 0.9rem; font-size: 0.82rem !important; }
 
-  /* Maintenance */
-  .maintenance { padding: 100px 5% 50px; }
+  /* Maintenance — padding-top = altura do nav fixo */
+  .maintenance { padding: 80px 5% 40px; }
   .maintenance h1 {
-    font-size: clamp(2.2rem, 10vw, 3.2rem);
+    font-size: clamp(2rem, 9.5vw, 3rem);
     letter-spacing: -0.5px;
     text-align: center;
   }
-  .maintenance-content { gap: 1.2rem; padding: 0 1rem; }
+  .maintenance-content { gap: 1.2rem; padding: 0 0.5rem; }
+  .btn-primary { padding: 0.8rem 1.6rem; font-size: 0.9rem; }
 
   /* Contact */
-  section { padding: 3.5rem 4%; }
-  .contact { scroll-margin-top: 110px; }
-  .contact-form { padding: 1.5rem; border-radius: 10px; }
-  .contact-info > p { font-size: 0.88rem; }
+  section { padding: 3rem 4%; }
+  .contact { scroll-margin-top: 64px; }
+  .contact-form { padding: 1.4rem; border-radius: 10px; }
 
   /* Previne zoom automático no iOS (font-size < 16px dispara zoom) */
   input, select, textarea { font-size: 16px; }
 }
 
-@media (max-width: 400px) {
-  .nav-cta { padding: 0.4rem 0.75rem; font-size: 0.78rem !important; }
-  .maintenance h1 { font-size: 2rem; }
+@media (max-width: 380px) {
+  .nav-cta { padding: 0.38rem 0.7rem; font-size: 0.76rem !important; }
+  .lang-opt { padding: 0.18rem 0.35rem; }
+  .maintenance h1 { font-size: 1.85rem; }
 }
