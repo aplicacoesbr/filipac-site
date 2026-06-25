@@ -14,14 +14,14 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 80px; /* compensa nav fixo em todos os browsers */
+  scroll-padding-top: 80px;
+  overflow-x: hidden; /* aqui evita bug do iOS Safari com position: fixed */
 }
 
 body {
   font-family: 'Inter', sans-serif;
   color: var(--text);
   background: var(--white);
-  overflow-x: hidden;
 }
 
 /* ─── SCROLL REVEAL ─────────────────────────────── */
