@@ -790,6 +790,7 @@ textarea { resize: vertical; min-height: 120px; }
   position: relative;
   overflow: hidden;
   text-align: center;
+  box-sizing: border-box;
 }
 .maintenance::before {
   content: '';
@@ -894,32 +895,56 @@ footer p {
 
 /* ─── RESPONSIVE ──────────────────────────────────── */
 @media (max-width: 900px) {
-  .hero-content,
-  .product-grid,
-  .about-grid,
-  .contact-grid { grid-template-columns: 1fr; gap: 3rem; }
-  .hero-content { gap: 2.5rem; }
-  .stats-grid { grid-template-columns: repeat(2, 1fr); }
-  .app-grid { grid-template-columns: 1fr 1fr; }
+  .contact-grid { grid-template-columns: 1fr; gap: 2rem; }
   .form-row { grid-template-columns: 1fr; }
-  .nav-links { display: none; }
-  .hamburger { display: flex; }
-  .nav-links.open {
-    display: flex;
-    flex-direction: column;
-    position: fixed;
-    top: 110px; left: 0; right: 0;
-    background: rgba(0,15,40,0.98);
-    padding: 2rem;
-    gap: 1.5rem;
-    align-items: center;
-  }
 }
+
 @media (max-width: 600px) {
-  .app-grid { grid-template-columns: 1fr; }
-  .product-features { grid-template-columns: 1fr; }
-  .about-stats-grid { grid-template-columns: 1fr; }
-  section { padding: 4rem 5%; }
-  .stat-item { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.07); }
-  .stat-item:last-child { border-bottom: none; }
+  /* Nav: remove posição absoluta do toggle para evitar sobreposição */
+  .nav {
+    height: auto;
+    min-height: 64px;
+    padding: 0.6rem 4%;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  .nav.scrolled { min-height: 58px; }
+  .nav-logo-img { height: 40px; }
+  .nav-center {
+    position: static;
+    transform: none;
+    order: 3;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding-bottom: 0.4rem;
+  }
+  .nav-right { gap: 0.5rem; }
+  .nav-cta {
+    padding: 0.45rem 1rem;
+    font-size: 0.85rem !important;
+  }
+
+  /* Maintenance */
+  .maintenance { padding: 100px 5% 50px; }
+  .maintenance h1 {
+    font-size: clamp(2.2rem, 10vw, 3.2rem);
+    letter-spacing: -0.5px;
+    text-align: center;
+  }
+  .maintenance-content { gap: 1.2rem; padding: 0 1rem; }
+
+  /* Contact */
+  section { padding: 3.5rem 4%; }
+  .contact { scroll-margin-top: 110px; }
+  .contact-form { padding: 1.5rem; border-radius: 10px; }
+  .contact-info > p { font-size: 0.88rem; }
+
+  /* Previne zoom automático no iOS (font-size < 16px dispara zoom) */
+  input, select, textarea { font-size: 16px; }
+}
+
+@media (max-width: 400px) {
+  .nav-cta { padding: 0.4rem 0.75rem; font-size: 0.78rem !important; }
+  .maintenance h1 { font-size: 2rem; }
 }
