@@ -905,6 +905,7 @@ footer p {
   /* Nav — altura fixa e igual nos dois estados, sem variação no mobile */
   .nav,
   .nav.scrolled { height: 60px; padding: 0 14px; box-shadow: none; }
+  .nav-cta { display: none; }
   .nav-logo-img { height: 34px; max-width: 110px; }
   .nav-right { gap: 8px; }
   .lang-toggle { padding: 2px 3px; }
