@@ -905,7 +905,7 @@ footer p {
   /* Nav — altura fixa, padding-right no próprio nav-right para garantir espaço */
   .nav,
   .nav.scrolled { height: 60px; padding: 0 0 0 14px; box-shadow: none; }
-  .nav-right { padding-right: 14px; }
+  .nav-right { padding-right: 24px; }
   .nav-cta { display: none; }
   .nav-logo-img { height: 34px; max-width: 110px; }
   .nav-right { gap: 8px; }
