@@ -15,13 +15,18 @@
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 80px;
-  overflow-x: hidden; /* aqui evita bug do iOS Safari com position: fixed */
 }
 
 body {
   font-family: 'Inter', sans-serif;
   color: var(--text);
   background: var(--white);
+}
+
+/* Overflow apenas no conteúdo — position:fixed (nav, fab) não é afetado */
+.scroll-container {
+  overflow-x: hidden;
+  max-width: 100%;
 }
 
 /* ─── SCROLL REVEAL ─────────────────────────────── */
@@ -84,8 +89,6 @@ body {
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   transition: background 0.4s ease, box-shadow 0.4s ease, height 0.3s ease;
-  -webkit-transform: translateZ(0);
-  transform: translateZ(0);
 }
 .nav.scrolled {
   background: rgba(0, 15, 40, 0.97);

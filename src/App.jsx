@@ -9,10 +9,12 @@ export default function App() {
   return (
     <LangProvider>
       <Nav />
-      <Maintenance />
-      <Contact />
-      <Footer />
       <LangFab />
+      <div className="scroll-container">
+        <Maintenance />
+        <Contact />
+        <Footer />
+      </div>
     </LangProvider>
   )
 }
