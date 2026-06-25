@@ -185,6 +185,9 @@ body {
 
 .nav-edge-spacer { display: none; }
 
+/* ─── LANG FAB (mobile only) ──────────────────────── */
+.lang-fab { display: none; }
+
 .hamburger {
   display: none;
   flex-direction: column;
@@ -904,33 +907,54 @@ footer p {
 @media (max-width: 600px) {
   html { scroll-padding-top: 72px; }
 
-  /* Nav — grid 2 colunas: logo ocupa auto, nav-right preenche o resto */
+  /* Nav — só logo, sem toggle no mobile */
   .nav,
   .nav.scrolled {
-    display: grid;
-    grid-template-columns: auto 1fr;
+    display: flex;
     align-items: center;
     height: 60px;
-    padding: 0 0 0 16px;
+    padding: 0 16px;
     box-shadow: none;
   }
   .nav-logo-img { height: 34px; max-width: 110px; }
-  .nav-right {
+  .nav-right { display: none; }
+
+  /* FAB de idioma */
+  .lang-fab {
     display: flex;
+    position: fixed;
+    bottom: 24px;
+    right: 20px;
+    z-index: 300;
     align-items: center;
-    justify-content: flex-end;
-    gap: 8px;
-    min-width: 0;
-    padding-right: 0;
+    gap: 4px;
+    background: rgba(0, 20, 55, 0.92);
+    border: 1.5px solid rgba(255, 255, 255, 0.22);
+    border-radius: 30px;
+    padding: 7px 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
   }
-  .nav-edge-spacer {
-    width: 20px;
-    flex-shrink: 0;
-    pointer-events: none;
+  .lang-fab-icon { color: rgba(255, 255, 255, 0.5); flex-shrink: 0; }
+  .lang-fab-sep { color: rgba(255, 255, 255, 0.2); font-size: 0.7rem; user-select: none; }
+  .lang-fab-opt {
+    background: transparent;
+    border: none;
+    color: rgba(255, 255, 255, 0.45);
+    font-family: 'Inter', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+    padding: 3px 6px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
   }
-  .lang-toggle { padding: 2px 3px; }
-  .lang-opt { padding: 3px 7px; font-size: 0.68rem; letter-spacing: 0.8px; }
-  .nav-cta { display: none; }
+  .lang-fab-opt.active {
+    background: var(--cta);
+    color: var(--blue-dark);
+  }
 
   /* Maintenance */
   .maintenance { padding: 76px 5% 40px; }
@@ -952,11 +976,8 @@ footer p {
 
 @media (max-width: 360px) {
   html { scroll-padding-top: 66px; }
-  .nav, .nav.scrolled { height: 54px; padding: 0 0 0 12px; }
-  .nav-right { padding-right: 0; }
-  .nav-edge-spacer { width: 14px; }
+  .nav, .nav.scrolled { height: 54px; padding: 0 12px; }
   .nav-logo-img { height: 30px; max-width: 90px; }
-  .lang-opt { padding: 2px 5px; font-size: 0.62rem; }
   .maintenance { padding: 66px 5% 36px; }
   .maintenance h1 { font-size: 1.8rem; }
 }

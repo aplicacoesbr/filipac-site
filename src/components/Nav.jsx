@@ -33,7 +33,6 @@ export default function Nav() {
           <button className={`lang-opt${lang === 'en' ? ' active' : ''}`} onClick={() => setLang('en')}>EN</button>
         </div>
         <a href="#contato" className="nav-cta">{t.nav.contact}</a>
-        <span className="nav-edge-spacer" aria-hidden="true" />
       </div>
     </nav>
   )

@@ -3,6 +3,7 @@ import Nav from './components/Nav'
 import Maintenance from './components/Maintenance'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
+import LangFab from './components/LangFab'
 
 export default function App() {
   return (
@@ -11,6 +12,7 @@ export default function App() {
       <Maintenance />
       <Contact />
       <Footer />
+      <LangFab />
     </LangProvider>
   )
 }
