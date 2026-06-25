@@ -12,7 +12,10 @@
   --white: #ffffff;
 }
 
-html { scroll-behavior: smooth; }
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px; /* compensa nav fixo em todos os browsers */
+}
 
 body {
   font-family: 'Inter', sans-serif;
@@ -92,10 +95,12 @@ body {
   text-decoration: none;
   display: flex;
   align-items: center;
+  flex-shrink: 0;
 }
 .nav-logo-img {
   height: 55px;
   width: auto;
+  max-width: 160px;
   object-fit: contain;
   mix-blend-mode: screen;
 }
@@ -894,16 +899,19 @@ footer p {
 }
 
 @media (max-width: 600px) {
-  /* Nav — linha única fixa */
-  .nav { height: 64px; padding: 0 4%; }
-  .nav.scrolled { height: 58px; }
-  .nav-logo-img { height: 38px; }
-  .nav-right { gap: 0.6rem; }
-  .lang-opt { padding: 0.2rem 0.45rem; font-size: 0.7rem; }
-  .nav-cta { padding: 0.42rem 0.9rem; font-size: 0.82rem !important; }
+  html { scroll-padding-top: 72px; }
 
-  /* Maintenance — padding-top = altura do nav fixo */
-  .maintenance { padding: 80px 5% 40px; }
+  /* Nav — linha única fixa, sem overflow */
+  .nav { height: 60px; padding: 0 4%; overflow: visible; }
+  .nav.scrolled { height: 56px; }
+  .nav-logo-img { height: 36px; max-width: 130px; }
+  .nav-right { gap: 0.5rem; flex-shrink: 0; }
+  .lang-toggle { padding: 0.15rem 0.2rem; }
+  .lang-opt { padding: 0.18rem 0.4rem; font-size: 0.68rem; letter-spacing: 1px; }
+  .nav-cta { padding: 0.4rem 0.85rem; font-size: 0.8rem !important; white-space: nowrap; }
+
+  /* Maintenance — padding-top cobre nav fixo */
+  .maintenance { padding: 76px 5% 40px; }
   .maintenance h1 {
     font-size: clamp(2rem, 9.5vw, 3rem);
     letter-spacing: -0.5px;
@@ -914,7 +922,6 @@ footer p {
 
   /* Contact */
   section { padding: 3rem 4%; }
-  .contact { scroll-margin-top: 64px; }
   .contact-form { padding: 1.4rem; border-radius: 10px; }
 
   /* Previne zoom automático no iOS (font-size < 16px dispara zoom) */
@@ -922,7 +929,11 @@ footer p {
 }
 
 @media (max-width: 380px) {
-  .nav-cta { padding: 0.38rem 0.7rem; font-size: 0.76rem !important; }
-  .lang-opt { padding: 0.18rem 0.35rem; }
+  html { scroll-padding-top: 66px; }
+  .nav { height: 56px; }
+  .nav-logo-img { height: 32px; max-width: 110px; }
+  .nav-cta { padding: 0.36rem 0.7rem; font-size: 0.75rem !important; }
+  .lang-opt { padding: 0.15rem 0.32rem; font-size: 0.65rem; }
+  .maintenance { padding: 68px 5% 40px; }
   .maintenance h1 { font-size: 1.85rem; }
 }
