@@ -112,7 +112,7 @@ export const translations = {
       cta: 'Entre em contato',
     },
     footer: {
-      copy: '© 2025 Filipac. Todos os direitos reservados.',
+      copy: '© 2026 Filipac. Todos os direitos reservados.',
     },
   },
 
@@ -229,7 +229,7 @@ export const translations = {
       cta: 'Contact us',
     },
     footer: {
-      copy: '© 2025 Filipac. All rights reserved.',
+      copy: '© 2026 Filipac. All rights reserved.',
     },
   },
 }
