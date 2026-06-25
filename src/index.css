@@ -902,9 +902,10 @@ footer p {
 @media (max-width: 600px) {
   html { scroll-padding-top: 72px; }
 
-  /* Nav — altura fixa e igual nos dois estados, sem variação no mobile */
+  /* Nav — altura fixa, padding-right no próprio nav-right para garantir espaço */
   .nav,
-  .nav.scrolled { height: 60px; padding: 0 14px; box-shadow: none; }
+  .nav.scrolled { height: 60px; padding: 0 0 0 14px; box-shadow: none; }
+  .nav-right { padding-right: 14px; }
   .nav-cta { display: none; }
   .nav-logo-img { height: 34px; max-width: 110px; }
   .nav-right { gap: 8px; }
@@ -936,7 +937,8 @@ footer p {
 
 @media (max-width: 360px) {
   html { scroll-padding-top: 66px; }
-  .nav, .nav.scrolled { height: 54px; padding: 0 10px; }
+  .nav, .nav.scrolled { height: 54px; padding: 0 0 0 10px; }
+  .nav-right { padding-right: 10px; }
   .nav-logo-img { height: 30px; max-width: 96px; }
   .lang-opt { padding: 2px 5px; font-size: 0.62rem; }
   .nav-cta { padding: 5px 10px; font-size: 0.72rem !important; }
