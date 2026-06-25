@@ -12,6 +12,14 @@ export default function Nav() {
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
+  useEffect(() => {
+    // Force mobile browsers to recalculate position:fixed layout on first paint
+    const id = requestAnimationFrame(() => {
+      window.scrollTo(window.scrollX, window.scrollY)
+    })
+    return () => cancelAnimationFrame(id)
+  }, [])
+
   return (
     <nav className={`nav${scrolled ? ' scrolled' : ''}`}>
       <a href="#" className="nav-logo">

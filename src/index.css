@@ -902,14 +902,14 @@ footer p {
 @media (max-width: 600px) {
   html { scroll-padding-top: 72px; }
 
-  /* Nav — grid 2 colunas: logo cresce, nav-right alinhado à direita dentro do padding */
+  /* Nav — grid 2 colunas: logo ocupa auto, nav-right preenche o resto */
   .nav,
   .nav.scrolled {
     display: grid;
     grid-template-columns: auto 1fr;
     align-items: center;
     height: 60px;
-    padding: 0 16px;
+    padding: 0 0 0 16px;
     box-shadow: none;
   }
   .nav-logo-img { height: 34px; max-width: 110px; }
@@ -919,6 +919,7 @@ footer p {
     justify-content: flex-end;
     gap: 8px;
     min-width: 0;
+    padding-right: 16px;
   }
   .lang-toggle { padding: 2px 3px; }
   .lang-opt { padding: 3px 7px; font-size: 0.68rem; letter-spacing: 0.8px; }
@@ -944,7 +945,8 @@ footer p {
 
 @media (max-width: 360px) {
   html { scroll-padding-top: 66px; }
-  .nav, .nav.scrolled { height: 54px; padding: 0 12px; }
+  .nav, .nav.scrolled { height: 54px; padding: 0 0 0 12px; }
+  .nav-right { padding-right: 12px; }
   .nav-logo-img { height: 30px; max-width: 90px; }
   .lang-opt { padding: 2px 5px; font-size: 0.62rem; }
   .maintenance { padding: 66px 5% 36px; }
