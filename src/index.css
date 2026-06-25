@@ -183,6 +183,8 @@ body {
   user-select: none;
 }
 
+.nav-edge-spacer { display: none; }
+
 .hamburger {
   display: none;
   flex-direction: column;
@@ -919,7 +921,12 @@ footer p {
     justify-content: flex-end;
     gap: 8px;
     min-width: 0;
-    padding-right: 16px;
+    padding-right: 0;
+  }
+  .nav-edge-spacer {
+    width: 20px;
+    flex-shrink: 0;
+    pointer-events: none;
   }
   .lang-toggle { padding: 2px 3px; }
   .lang-opt { padding: 3px 7px; font-size: 0.68rem; letter-spacing: 0.8px; }
@@ -946,9 +953,11 @@ footer p {
 @media (max-width: 360px) {
   html { scroll-padding-top: 66px; }
   .nav, .nav.scrolled { height: 54px; padding: 0 0 0 12px; }
-  .nav-right { padding-right: 12px; }
+  .nav-right { padding-right: 0; }
+  .nav-edge-spacer { width: 14px; }
   .nav-logo-img { height: 30px; max-width: 90px; }
   .lang-opt { padding: 2px 5px; font-size: 0.62rem; }
   .maintenance { padding: 66px 5% 36px; }
   .maintenance h1 { font-size: 1.8rem; }
 }
+
