@@ -1,5 +1,5 @@
 import { useScrollReveal } from '../hooks/useScrollReveal'
-import { MdEmail, MdLocationOn, MdChevronRight } from 'react-icons/md'
+import { MdEmail, MdChevronRight } from 'react-icons/md'
 import { useLang } from '../context/LangContext'
 
 export default function Contact() {
@@ -22,11 +22,6 @@ export default function Contact() {
               <div className="icon"><MdEmail size={20} /></div>
               <span>contato@filipac.com.br</span>
               <MdChevronRight size={18} style={{ marginLeft: 'auto', opacity: 0.4 }} />
-            </a>
-            <a className="contact-detail" href="https://www.google.com/maps/search/?api=1&query=R.+Monsaras,+19,+Magalhães+Bastos,+Rio+de+Janeiro,+RJ,+21735-050" target="_blank" rel="noopener noreferrer">
-              <div className="icon"><MdLocationOn size={20} /></div>
-              <span>R. Monsaras, 19 - Magalhães Bastos, Rio de Janeiro - RJ, 21735-050</span>
-              <MdChevronRight size={18} style={{ marginLeft: 'auto', opacity: 0.4, flexShrink: 0 }} />
             </a>
           </div>
 

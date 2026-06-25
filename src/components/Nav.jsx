@@ -30,19 +30,7 @@ export default function Nav() {
       </div>
 
       <div className="nav-right">
-        <ul className={`nav-links${menuOpen ? ' open' : ''}`}>
-          <li><a href="#produto" onClick={close}>{t.nav.product}</a></li>
-          <li><a href="#aplicacoes" onClick={close}>{t.nav.applications}</a></li>
-          <li><a href="#sobre" onClick={close}>{t.nav.about}</a></li>
-          <li><a href="#contato" className="nav-cta" onClick={close}>{t.nav.contact}</a></li>
-        </ul>
-        <button
-          className={`hamburger${menuOpen ? ' open' : ''}`}
-          onClick={() => setMenuOpen(v => !v)}
-          aria-label="Abrir menu"
-        >
-          <span /><span /><span />
-        </button>
+        <a href="#contato" className="nav-cta">{t.nav.contact}</a>
       </div>
     </nav>
   )
