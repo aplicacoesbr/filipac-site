@@ -666,7 +666,7 @@ section { padding: 6rem 5%; }
 }
 
 /* ─── CONTACT ─────────────────────────────────────── */
-.contact { background: var(--gray); }
+.contact { background: var(--gray); scroll-margin-top: 90px; }
 .contact-centered {
   max-width: 720px;
   margin: 0 auto;
