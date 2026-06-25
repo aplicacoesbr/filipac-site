@@ -84,6 +84,8 @@ body {
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   transition: background 0.4s ease, box-shadow 0.4s ease, height 0.3s ease;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
 }
 .nav.scrolled {
   background: rgba(0, 15, 40, 0.97);
@@ -898,11 +900,11 @@ footer p {
 }
 
 @media (max-width: 600px) {
-  html { scroll-padding-top: 76px; }
+  html { scroll-padding-top: 72px; }
 
-  /* Nav — padding fixo em px elimina variação de % */
-  .nav { height: 60px; padding: 0 14px; }
-  .nav.scrolled { height: 56px; }
+  /* Nav — altura fixa e igual nos dois estados, sem variação no mobile */
+  .nav,
+  .nav.scrolled { height: 60px; padding: 0 14px; box-shadow: none; }
   .nav-logo-img { height: 34px; max-width: 110px; }
   .nav-right { gap: 8px; }
   .lang-toggle { padding: 2px 3px; }
@@ -932,8 +934,8 @@ footer p {
 }
 
 @media (max-width: 360px) {
-  html { scroll-padding-top: 68px; }
-  .nav { height: 54px; padding: 0 10px; }
+  html { scroll-padding-top: 66px; }
+  .nav, .nav.scrolled { height: 54px; padding: 0 10px; }
   .nav-logo-img { height: 30px; max-width: 96px; }
   .lang-opt { padding: 2px 5px; font-size: 0.62rem; }
   .nav-cta { padding: 5px 10px; font-size: 0.72rem !important; }

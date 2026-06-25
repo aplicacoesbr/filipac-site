@@ -3,7 +3,7 @@ import logo from '../assets/logo_filipac.png'
 import { useLang } from '../context/LangContext'
 
 export default function Nav() {
-  const [scrolled, setScrolled] = useState(false)
+  const [scrolled, setScrolled] = useState(() => window.scrollY > 20)
   const { lang, setLang, t } = useLang()
 
   useEffect(() => {
