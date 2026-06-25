@@ -95,7 +95,6 @@ body {
   text-decoration: none;
   display: flex;
   align-items: center;
-  flex-shrink: 0;
 }
 .nav-logo-img {
   height: 55px;
@@ -899,18 +898,22 @@ footer p {
 }
 
 @media (max-width: 600px) {
-  html { scroll-padding-top: 72px; }
+  html { scroll-padding-top: 76px; }
 
-  /* Nav — linha única fixa, sem overflow */
-  .nav { height: 60px; padding: 0 4%; overflow: visible; }
+  /* Nav — padding fixo em px elimina variação de % */
+  .nav { height: 60px; padding: 0 14px; }
   .nav.scrolled { height: 56px; }
-  .nav-logo-img { height: 36px; max-width: 130px; }
-  .nav-right { gap: 0.5rem; flex-shrink: 0; }
-  .lang-toggle { padding: 0.15rem 0.2rem; }
-  .lang-opt { padding: 0.18rem 0.4rem; font-size: 0.68rem; letter-spacing: 1px; }
-  .nav-cta { padding: 0.4rem 0.85rem; font-size: 0.8rem !important; white-space: nowrap; }
+  .nav-logo-img { height: 34px; max-width: 110px; }
+  .nav-right { gap: 8px; }
+  .lang-toggle { padding: 2px 3px; }
+  .lang-opt { padding: 3px 7px; font-size: 0.68rem; letter-spacing: 0.8px; }
+  .nav-cta {
+    padding: 6px 12px;
+    font-size: 0.78rem !important;
+    white-space: nowrap;
+  }
 
-  /* Maintenance — padding-top cobre nav fixo */
+  /* Maintenance */
   .maintenance { padding: 76px 5% 40px; }
   .maintenance h1 {
     font-size: clamp(2rem, 9.5vw, 3rem);
@@ -928,12 +931,12 @@ footer p {
   input, select, textarea { font-size: 16px; }
 }
 
-@media (max-width: 380px) {
-  html { scroll-padding-top: 66px; }
-  .nav { height: 56px; }
-  .nav-logo-img { height: 32px; max-width: 110px; }
-  .nav-cta { padding: 0.36rem 0.7rem; font-size: 0.75rem !important; }
-  .lang-opt { padding: 0.15rem 0.32rem; font-size: 0.65rem; }
-  .maintenance { padding: 68px 5% 40px; }
-  .maintenance h1 { font-size: 1.85rem; }
+@media (max-width: 360px) {
+  html { scroll-padding-top: 68px; }
+  .nav { height: 54px; padding: 0 10px; }
+  .nav-logo-img { height: 30px; max-width: 96px; }
+  .lang-opt { padding: 2px 5px; font-size: 0.62rem; }
+  .nav-cta { padding: 5px 10px; font-size: 0.72rem !important; }
+  .maintenance { padding: 66px 5% 36px; }
+  .maintenance h1 { font-size: 1.8rem; }
 }
