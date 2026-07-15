@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react'
-import logo from '../assets/logo_filipac.png'
 import { useLang } from '../context/LangContext'
 
 export default function Nav() {
@@ -22,10 +21,6 @@ export default function Nav() {
 
   return (
     <nav className={`nav${scrolled ? ' scrolled' : ''}`}>
-      <a href="#" className="nav-logo">
-        <img src={logo} alt="Filipac" className="nav-logo-img" />
-      </a>
-
       <div className="nav-right">
         <div className="lang-toggle" aria-label="Mudar idioma">
           <button className={`lang-opt${lang === 'pt' ? ' active' : ''}`} onClick={() => setLang('pt')}>PT</button>

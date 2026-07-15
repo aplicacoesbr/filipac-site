@@ -82,7 +82,7 @@ body {
   z-index: 200;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-end;
   padding: 0 5%;
   height: 110px;
   background: rgba(0, 31, 77, 0.85);
@@ -94,19 +94,6 @@ body {
   background: rgba(0, 15, 40, 0.97);
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.4);
   height: 90px;
-}
-
-.nav-logo {
-  text-decoration: none;
-  display: flex;
-  align-items: center;
-}
-.nav-logo-img {
-  height: 55px;
-  width: auto;
-  max-width: 160px;
-  object-fit: contain;
-  mix-blend-mode: screen;
 }
 
 .nav-links {
@@ -885,17 +872,6 @@ footer {
   padding: 3rem 5%;
   text-align: center;
 }
-.footer-logo {
-  margin-bottom: 1rem;
-  display: flex;
-  justify-content: center;
-}
-.footer-logo-img {
-  height: 55px;
-  width: auto;
-  object-fit: contain;
-  mix-blend-mode: screen;
-}
 footer p {
   color: rgba(255,255,255,0.35);
   font-size: 0.82rem;
@@ -910,17 +886,8 @@ footer p {
 @media (max-width: 600px) {
   html { scroll-padding-top: 72px; }
 
-  /* Nav — só logo, sem toggle no mobile */
-  .nav,
-  .nav.scrolled {
-    display: flex;
-    align-items: center;
-    height: 60px;
-    padding: 0 16px;
-    box-shadow: none;
-  }
-  .nav-logo-img { height: 34px; max-width: 110px; }
-  .nav-right { display: none; }
+  /* Nav — oculta no mobile (sem logo; idioma via FAB) */
+  .nav { display: none; }
 
   /* FAB de idioma */
   .lang-fab {
@@ -979,8 +946,6 @@ footer p {
 
 @media (max-width: 360px) {
   html { scroll-padding-top: 66px; }
-  .nav, .nav.scrolled { height: 54px; padding: 0 12px; }
-  .nav-logo-img { height: 30px; max-width: 90px; }
   .maintenance { padding: 66px 5% 36px; }
   .maintenance h1 { font-size: 1.8rem; }
 }
